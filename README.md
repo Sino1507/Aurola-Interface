@@ -1,5 +1,5 @@
 # Aurola-Interface™️
-## Aurola-Interface™️ is a multi-purpose interface for Roblox.It contains a lot of features and it is very easy to use.
+## Aurola-Interface™️ is a multi-purpose interface for Roblox. It contains a lot of features and it is very easy to use.
 <!---->
 ### Features💫:
 - [x] Easy to use
