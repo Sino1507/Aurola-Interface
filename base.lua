@@ -64,9 +64,22 @@ Rayfield:Notify({
 })
 
 if ValidateFile() == true then
-    Rayfield:Destroy()
-    wait(2)
-    loadstring(game:HttpGet(BaseLink))()
+    Rayfield:Notify({
+        Title = "Aurola-Interface-Suite",
+        Content = "Game is supported!",
+        Duration = 5,
+        Image = 4483362458,
+        Actions = { -- Notification Buttons
+           Ignore = {
+              Name = "Load!",
+              Callback = function()
+                Rayfield:Destroy()
+                wait(2)
+                loadstring(game:HttpGet(BaseLink))()
+            end 
+        },
+     },
+    })
 else
     Rayfield:Notify({
         Title = "Aurola-Interface-Suite",
