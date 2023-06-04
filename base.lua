@@ -22,7 +22,7 @@ local Window = Rayfield:CreateWindow({
        FileName = "AurolaISKBase",
        SaveKey = true,
        GrabKeyFromSite = true, 
-       Key = {"https://raw.githubusercontent.com/Sino1507/Aurola-Interface/assets/TestingKey/AurolaISK.txt"}
+       Key = {"https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/assets/TestingKey/AurolaISK.txt"}
     }
 })
 
@@ -32,7 +32,7 @@ local Destroy = Tab:CreateButton({
     Callback = function()
         Rayfield:Destroy()
     end,
- })
+})
 
 local GameID = game.PlaceId
 local BaseLink = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/games/"
@@ -69,6 +69,7 @@ Rayfield:Notify({
 })
 
 if ValidateFile() == true then
+    Rayfield:Destroy()
     local GameLink = GetGameLink()
     local GameFile = game:HttpGet(GameLink)
     loadstring(GameFile)()
