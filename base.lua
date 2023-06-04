@@ -46,6 +46,7 @@ end
 function ValidateFile()
     local GameLink = GetGameLink()
     local GameFile = game:HttpGet(GameLink)
+    print(GameFile)
     if GameFile == "404: Not Found" then
         return false
     else
