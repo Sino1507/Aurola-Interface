@@ -62,7 +62,7 @@ Rayfield:Notify({
        Ignore = {
           Name = "Okay!",
           Callback = function()
-            return
+            print("Okay!")
         end 
     },
  },
