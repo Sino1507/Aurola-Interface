@@ -41,7 +41,6 @@ local BaseLink = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/ma
 
 function ValidateFile()
     local GameFile = game:HttpGet(BaseLink)
-    print(GameFile)
     if GameFile == "404: Not Found" then
         return false
     else
@@ -66,9 +65,7 @@ Rayfield:Notify({
 
 if ValidateFile() == true then
     Rayfield:Destroy()
-    local GameLink = GetGameLink()
-    local GameFile = game:HttpGet(GameLink)
-    loadstring(GameFile)()
+    loadstring(game:HttpGet(BaseLink))()
 else
     Rayfield:Notify({
         Title = "Aurola-Interface-Suite",
