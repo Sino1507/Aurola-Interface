@@ -65,6 +65,7 @@ Rayfield:Notify({
 
 if ValidateFile() == true then
     Rayfield:Destroy()
+    wait(2)
     loadstring(game:HttpGet(BaseLink))()
 else
     Rayfield:Notify({
