@@ -35,17 +35,12 @@ local Destroy = Tab:CreateButton({
 })
 
 local GameID = game.PlaceId
-local BaseLink = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/games/"
+local BaseLink = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/games/"..GameID.."/base.lua"
 --local ServerID = game.JobId
 
-local function GetGameLink()
-    local GameLink = BaseLink..GameID.."/base.lua"
-    return GameLink
-end
 
 function ValidateFile()
-    local GameLink = GetGameLink()
-    local GameFile = game:HttpGet(GameLink)
+    local GameFile = game:HttpGet(BaseLink)
     print(GameFile)
     if GameFile == "404: Not Found" then
         return false
