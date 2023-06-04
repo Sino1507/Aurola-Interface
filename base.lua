@@ -26,6 +26,14 @@ local Window = Rayfield:CreateWindow({
     }
 })
 
+local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
+local Destroy = Tab:CreateButton({
+    Name = "Destroy",
+    Callback = function()
+        Rayfield:Destroy()
+    end,
+ })
+
 local GameID = game.PlaceId
 local BaseLink = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/games/"
 --local ServerID = game.JobId
