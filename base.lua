@@ -1,3 +1,7 @@
+getgenv().AP.shared.GitHubBase = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/"
+getgenv().AP.shared.Config = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/config.json"
+getgenv().AP.shared.Modules = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/modules/"
+
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
@@ -25,6 +29,8 @@ local Window = Rayfield:CreateWindow({
        Key = {"https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/assets/TestingKey/AurolaISK.txt"}
     }
 })
+
+local NotificationAP = loadstring(game:HttpGet(getgenv().AP.shared.Modules .. "NotificationsAP.lua"))()
 
 local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
 local Destroy = Tab:CreateButton({
@@ -65,9 +71,9 @@ Rayfield:Notify({
     Image = 4483362458,
     Actions = { -- Notification Buttons
        Ignore = {
-          Name = "Okay!",
+          Name = NotificationAP:PickEntWord(),
           Callback = function()
-            print("Okay!")
+            print("Nice!")
         end 
     },
  },
@@ -81,11 +87,9 @@ if ValidateFile() == true then
         Image = 4483362458,
         Actions = { -- Notification Buttons
            Ignore = {
-              Name = "Load!",
+              Name = NotificationAP:PickEntWord(),
               Callback = function()
-                Rayfield:Destroy()
-                wait(2)
-                loadstring(game:HttpGet(BaseLink))()
+                print("Nice!")
             end 
         },
      },
