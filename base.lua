@@ -31,7 +31,7 @@ local Window = Rayfield:CreateWindow({
        Key = {"https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/assets/TestingKey/AurolaISK.txt"}
     }
 })
-
+-- Problem nil value 05.06.2023 BITTE ERLEDIGEN IRGENDWANN!
 local NotificationAP = loadstring(game:HttpGet(getgenv().AP.shared.Modules .. "NotificationsAP.lua"))()
 
 local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
