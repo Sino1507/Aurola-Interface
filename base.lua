@@ -33,6 +33,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 local NotificationAPS = getgenv().AP.shared.Modules .. "NotificationsAP.lua"
+NotificationAPS = NotificationAPS:gsub("\n", "")
 print("Getting NotificationAP from: " .. NotificationAPS)
 local NotificationAP = loadstring(game:HttpGet(NotificationAPS))()
 
