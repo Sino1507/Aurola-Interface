@@ -34,9 +34,19 @@ local Destroy = Tab:CreateButton({
     end,
 })
 
+
 local GameID = game.PlaceId
 local BaseLink = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/games/"..GameID.."/base.lua"
 --local ServerID = game.JobId
+
+local Load = Tab:CreateButton({
+    Name = "Load",
+    Callback = function()
+        Rayfield:Destroy()
+        wait(2)
+        loadstring(game:HttpGet(BaseLink))()
+    end,
+})
 
 
 function ValidateFile()
