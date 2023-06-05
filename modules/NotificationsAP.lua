@@ -13,7 +13,7 @@ local function GetEntWord()
     return ReplyEntWords[math.random(1, #ReplyEntWords)]
 end
 
-local function baseAP:PickEntWord()
+function baseAP.PickEntWord()
     return GetEntWord()
 end
 
