@@ -37,9 +37,8 @@ NotificationAPS = NotificationAPS:gsub("\n", "")
 NotificationAPS = NotificationAPS:gsub("\t", "")
 NotificationAPS = NotificationAPS:gsub(" ", "")
 print("Getting NotificationAP from: " .. NotificationAPS)
-local NotificationAP = pcall(function()
-    loadstring(game:HttpGet(NotificationAPS))()
-end)
+local NotificationAP = loadstring(game:HttpGet(NotificationAPS))()
+
 
 local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
 local Destroy = Tab:CreateButton({
