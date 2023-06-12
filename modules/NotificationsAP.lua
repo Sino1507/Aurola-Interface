@@ -13,6 +13,6 @@ function baseAP.PickEntWord()
     return GetEntWord()
 end
 
-getgenv().AP.shared.baseAP = Config.GlobalVariables and baseAP or nil
+getgenv().AP.shared.NotificationAP = Config.GlobalVariables and baseAP or nil
 
 return baseAP

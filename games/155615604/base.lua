@@ -1,4 +1,5 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Config = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/config.json"))
 
 local Window = Rayfield:CreateWindow({
     Name = "Aurola-Interface-Suite",
@@ -26,6 +27,12 @@ local Window = Rayfield:CreateWindow({
     }
 })
 
+local NotificationAPS = getgenv().AP.shared.Modules .. "NotificationsAP.lua"
+NotificationAPS = NotificationAPS:gsub("\n", "")
+NotificationAPS = NotificationAPS:gsub("\t", "")
+NotificationAPS = NotificationAPS:gsub(" ", "")
+local NotificationAP = loadstring(game:HttpGet(NotificationAPS))()
+
 local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
 local Print = Tab:CreateButton({
     Name = "Print",
@@ -40,3 +47,18 @@ local Destroy = Tab:CreateButton({
         Rayfield:Destroy()
     end,
 })
+
+Rayfield:Notify({
+    Title = "Aurola-Interface-Suite",
+    Content = "Welcome to Aurola [Prison Life]!",
+    Duration = 5,
+    Image = 4483362458,
+    Actions = { -- Notification Buttons
+       Ignore = {
+          Name = Config.GlobalVariables and getgenv().AP.shared.NotificationAP:PickEntWord() or NotificationAP:PickEntWord(),
+          Callback = function()
+          print("Nice!")
+       end
+    },
+ },
+ })
