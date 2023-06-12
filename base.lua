@@ -212,3 +212,5 @@ else
      },
     })
 end
+
+Rayfield:LoadConfiguration()
