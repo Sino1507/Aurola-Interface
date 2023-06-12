@@ -1,7 +1,3 @@
-getgenv().AP = {}
-getgenv().AP.shared = {}
-getgenv().AP.shared.GitHubBase = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/"
-getgenv().AP.shared.Config = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/config.json"
 local baseAP = {}
 baseAP.__index = baseAP
 
