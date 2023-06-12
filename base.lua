@@ -94,7 +94,7 @@ local AutoClear = Tab:CreateToggle({
                 if getgenv().AP.shared.GlobalCooldown == true then 
                     return 
                 end
-                if getgenv().AP.shared.TMP then
+                if getgenv().AP.shared.TMP ~= {} then
                     for i,v in pairs(getgenv().AP.shared.TMP) do
                         if v and typeof(v) == "Instance" then
                             if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") or v:IsA("ImageLabel") or v:IsA("ImageButton") then
