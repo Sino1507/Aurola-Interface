@@ -6,10 +6,10 @@ local Window = Rayfield:CreateWindow({
     LoadingTitle = "Prison Life",
     LoadingSubtitle = "by Aurola-Studios™️",
     ConfigurationSaving = {
-       Enabled = false,
-       FolderName = nil, 
-       FileName = ""
-    },
+        Enabled = true,
+        FolderName = "Aurola_Interface_Suite", 
+        FileName = "Prison_Life"
+     },
     Discord = {
        Enabled = false,
        Invite = "", 

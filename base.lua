@@ -28,9 +28,9 @@ local Window = Rayfield:CreateWindow({
     LoadingTitle = "Setup",
     LoadingSubtitle = "by Aurola-Studios™️",
     ConfigurationSaving = {
-       Enabled = false,
-       FolderName = nil, 
-       FileName = ""
+       Enabled = true,
+       FolderName = "Aurola_Interface_Suite", 
+       FileName = "Universal_Config"
     },
     Discord = {
        Enabled = false,
