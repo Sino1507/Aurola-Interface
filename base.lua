@@ -89,9 +89,11 @@ local AutoClear = Tab:CreateToggle({
              },
             })
 
-            Connections["AutoClearTMP"] = game.RunService.Stepped:Connect(function()
+            Connections["AutoClearTMP"] = game.RunService.RenderStepped:Connect(function()
                 -- Clear TMP & use GlobalDelay
-                if getgenv().AP.shared.GlobalCooldown == true then return end
+                if getgenv().AP.shared.GlobalCooldown == true then 
+                    return 
+                end
                 if getgenv().AP.shared.TMP then
                     for i,v in pairs(getgenv().AP.shared.TMP) do
                         if v and typeof(v) == "Instance" then
