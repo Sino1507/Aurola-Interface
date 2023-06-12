@@ -36,7 +36,6 @@ local NotificationAPS = getgenv().AP.shared.Modules .. "NotificationsAP.lua"
 NotificationAPS = NotificationAPS:gsub("\n", "")
 NotificationAPS = NotificationAPS:gsub("\t", "")
 NotificationAPS = NotificationAPS:gsub(" ", "")
-print("Getting NotificationAP from: " .. NotificationAPS)
 local NotificationAP = loadstring(game:HttpGet(NotificationAPS))()
 
 
