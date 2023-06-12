@@ -89,24 +89,26 @@ local AutoClear = Tab:CreateToggle({
              },
             })
 
-            Connections["AutoClearTMP"] = game.RunService.RenderStepped:Connect(function()
+            Connections["AutoClearTMP"] = game.RunService.Stepped:Connect(function()
                 -- Clear TMP & use GlobalDelay
                 if getgenv().AP.shared.GlobalCooldown == true then 
                     return 
                 end
-                if getgenv().AP.shared.TMP ~= {} then
-                    for i,v in pairs(getgenv().AP.shared.TMP) do
-                        if v and typeof(v) == "Instance" then
-                            if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") or v:IsA("ImageLabel") or v:IsA("ImageButton") then
-                                v:Destroy()
+                if getgenv().AP.shared.TMP ~= {} and getgenv().AP.shared.TMP ~= nil then
+                        for i,v in pairs(getgenv().AP.shared.TMP) do
+                            if v == nil then return end 
+                            if v and typeof(v) == "Instance" then
+                                if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") or v:IsA("ImageLabel") or v:IsA("ImageButton") then
+                                    v:Destroy()
+                                end
+                            else if v and typeof(v) == "table" then
+                                v = nil
+                            else
+                                getgenv().AP.shared.TMP[i] = nil
                             end
-                        else if v and typeof(v) == "table" then
-                            v = nil
-                        else
-                            getgenv().AP.shared.TMP[i] = nil
                         end
+                        getgenv().AP.shared.GlobalCooldown = true
                     end
-                    getgenv().AP.shared.GlobalCooldown = true
                 end
             end)
 
