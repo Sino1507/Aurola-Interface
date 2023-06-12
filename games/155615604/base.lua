@@ -62,3 +62,5 @@ Rayfield:Notify({
     },
  },
  })
+
+ Rayfield:LoadConfiguration()
