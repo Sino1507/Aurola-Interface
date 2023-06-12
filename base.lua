@@ -55,6 +55,11 @@ NotificationAPS = NotificationAPS:gsub("\t", "")
 NotificationAPS = NotificationAPS:gsub(" ", "")
 local NotificationAP = loadstring(game:HttpGet(NotificationAPS))()
 
+local GameID = game.PlaceId
+local BaseLink = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/games/"..GameID.."/base.lua"
+--local ServerID = game.JobId
+
+
 
 local Tab = Window:CreateTab("Loader", 4483362458) -- Title, Image
 local SectionLoader = Tab:CreateSection("Loader Section") -- Section Title
@@ -149,12 +154,6 @@ local Destroy = Tab:CreateButton({
         Rayfield:Destroy()
     end,
 })
-
-
-local GameID = game.PlaceId
-local BaseLink = "https://raw.githubusercontent.com/Sino1507/Aurola-Interface/main/games/"..GameID.."/base.lua"
---local ServerID = game.JobId
-
 
 
 
